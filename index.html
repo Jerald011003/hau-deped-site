@@ -1,0 +1,238 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet'>
+<link rel="stylesheet" href="styles.css">
+<title>Department of Education</title>
+</head>
+<body>
+  
+    
+    <main>
+        <div class="container">
+        <nav class="navbar">
+            <div class="logo" >
+                <h2 style="margin-right: 20px; font-weight: lighter; font-size: 20px; font-family: 'Lobster', cursive;">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">GOVPH</a>
+                </h2>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                
+                <li><a href="index.html" onclick="closeNav()" class="active">Home</a></li>
+                <li class="has-submenu">
+                    <a href="#portfolio">About<span class="arrow-icon">&#9660;</span></a>
+                    <ul class="submenu">
+                        <li class="has-submenu2">
+                            <a href="#about1" class="has-arrow">Overview<span class="arrow-icon2"> &#9660;</span></a>
+                            <ul class="submenu2">
+                                <li><a href="#sub-item1">History</a></li>
+                                <li><a href="#sub-item2">Vision, Mission, Core Values, and Mandate</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#about2">Organizational Structure</a></li>
+                        <li><a href="#about2">DepEd Data Privacy</a></li>
+                        <li><a href="#about2">Citizen's Charter</a></li>
+                        <li><a href="#about2">Careers</a></li>
+                    </ul>
+                </li>
+                <li><a href="#experience" onclick="closeNav()" >The Secretary</a></li>
+                <li><a href="#interest" onclick="closeNav()" >K to 12</a></li>
+                <li><a href="#contact"  onclick="closeNav()">Resources</a></li>
+                <li><a href="#contact"  onclick="closeNav()">Procurement</a></li>
+                <li><a href="#contact"  onclick="closeNav()">Contact Us</a></li>
+                <li><a href="#contact"  onclick="closeNav()">Regions</a></li>
+                <li  class="search"><input ></li>
+
+                
+            </ul>
+            <div class="menu-container">
+                <div class="menu-label">Menu</div>
+                <div class="hamburger-menu" onclick="toggleNav()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div> 
+
+            <ul class="nav-links" id="navLinks">
+
+            <li class="has-submenu">
+                <a href="#portfolio">Menu<span class="arrow-icon"><i class="fas fa-bars"></i></span></a>
+                <ul class="submenu">
+                    <li><a href="#accessibilitystatement" onclick="toggleAccess()">Accessibility Statement</a>
+                        <div class="popup" id="popup-1">
+                            <div class="overlay">
+                                <div class="content">
+                                    <div class="close-btn" onclick="toggleAccess()">
+                                        &times;
+                                    </div>
+                                    <textarea rows="10" cols="45"
+                                        readonly>This website adopts the Web Content Accessibility Guidelines (WCAG 2.0) as the accessibility standard for all its related web development and services. WCAG 2.0 is also an international standard, ISO 40500. This certifies it as a stable and referenceable technical standard. 
+
+                                        WCAG 2.0 contains 12 guidelines organized under 4 principles: Perceivable, Operable, Understandable, and Robust (POUR for short). There are testable success criteria for each guideline. Compliance to these criteria is measured in three levels: A, AA, or AAA. A guide to understanding and implementing Web Content Accessibility Guidelines 2.0 is available at: https://www.w3.org/TR/UNDERSTANDING-WCAG20/
+                                        
+                                        Accessibility Features
+                                        
+                                        Shortcut Keys Combination Activation Combination keys used for each browser.
+                                        
+                                            Chrome for Linux press (Alt+Shift+shortcut_key) 
+                                            Chrome for Windows press (Alt+shortcut_key) 
+                                            For Firefox press (Alt+Shift+shortcut_key) 
+                                            For Internet Explorer press (Alt+Shift+shortcut_key) then press (enter)
+                                            On Mac OS press (Ctrl+Opt+shortcut_key)
+                                        
+                                            Accessibility Statement (Combination + 0): Statement page that will show the available accessibility keys. 
+                                            Home Page (Combination + H): Accessibility key for redirecting to homepage. 
+                                            Main Content (Combination + R): Shortcut for viewing the content section of the current page. 
+                                            FAQ (Combination + Q): Shortcut for FAQ page. 
+                                            Contact (Combination + C): Shortcut for contact page or form inquiries. 
+                                            Feedback (Combination + K): Shortcut for feedback page. 
+                                            Site Map (Combination + M): Shortcut for site map (footer agency) section of the page. 
+                                            Search (Combination + S): Shortcut for search page. 
+                                        
+                                        Press esc, or click the close the button to close this dialog box.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#tts" onclick="togglePopup('textToSpeak')">Text to Speech</a>
+                        <div class="popup" id="popup-textToSpeak">
+                            <div class="overlay">
+                                <div class="content">
+                                    <div class="close-btn" onclick="togglePopup('textToSpeak')">
+                                        &times;
+                                    </div>
+                                    <textarea id="textToSpeak" rows="10" cols="45" placeholder="Type your text here..."></textarea>
+                                    <button onClick="speakText('textToSpeak')">Speak</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li><a href="#highcontrast" onclick="toggleHighContrast()">High Contrast</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        </nav>
+
+        <section class="row">
+            <div class="large-9 columns">
+              <h1 class="logodeped"><a href="index.html" title="Department of Education" rel="home"><img src="http://www.deped.gov.ph/wp-content/uploads/2018/07/DepEd-Website-header-110px_1.png" /></a></h1>
+            </div>
+            <div class="large-3 columns">
+              <div id="text-2" class="ear-content widget anchor widget_text">
+                <div class="textwidget">
+                  <a href="http://www.deped.gov.ph/transparency">
+                    <p style="text-align: center;"><img margin="auto" display="block" id="tp-seal" src="http://www.deped.gov.ph/wp-content/themes/gwt-wordpress-25.3/images/transparency-seal-160x160.png" alt="transparency seal logo" title="Transparency Seal" width="100"></p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+  <!--Eto yung nagawa kong carousel pero pwede nyo tanggalin-->
+  <!--Dito kayo magsimula-->
+        <section class="container-page">
+    
+           
+            <div class="carousel-wrapper">
+                <h2> LATEST UPDATE</h2>
+                <br>
+                <div class="carousel">
+                    <img id="slide-1" src="images/MATATAG-Cover-Photo.jpg" alt="Test Slide 1">
+                    <img id="slide-2" src="images/BER-banner-1536x569.jpg" alt="Test Slide 2">
+                </div>
+                <div class="carousel-nav">
+                    <a href="#slide-1"></a>
+                    <a href="#slide-2"></a>
+                </div>
+            </div>
+        </section>
+
+        <!--End ng carousel-->
+        <section class="container-page2">
+
+            <div id="panel-bottom" class="anchor" role="complementary">
+                <div class="row2">
+                    <aside id="panel-bottom-1" class="large-6 columns" role="complementary">
+                        <div id="listcategorypostswidget-2" class="widget widget_listcategorypostswidget">
+                            <h3 class="widget-title">Recent DepEd Orders</h3>
+                            <ul class="lcp_catlist" id="lcp_instance_listcategorypostswidget-2">
+                                <li><a href="https://www.deped.gov.ph/2023/09/19/september-19-2023-do-025-s-2023-guidelines-on-the-procurement-and-quality-assurance-of-textbooks-and-teachers-manuals/">SEPTEMBER 19, 2023 DO 025, S. 2023 – Guidelines on the Procurement and Quality Assurance of Textbooks and Teacher&#8217;s Manuals</a></li>
+                                <li><a href="https://www.deped.gov.ph/2023/09/19/september-19-2023-do-024-s-2023-guidelines-on-the-provision-of-supplementary-learning-resources-for-public-school-libraries-and-library-hubs/">SEPTEMBER 19, 2023 DO 024, S. 2023 – Guidelines on the Provision of Supplementary Learning Resources for Public School Libraries and Library Hubs</a></li>
+                                <li><a href="https://www.deped.gov.ph/2023/08/16/august-16-2023-do-023-s-2023-assumption-of-authority-of-the-department-of-education-over-the-14-public-schools-affected-by-the-supreme-court-decision-in-g-r-no-235316assumption-of-autho/">AUGUST 16, 2023 DO 023, S. 2023 – Assumption of Authority of the Department of Education Over the 14 Public Schools Affected by the Supreme Court Decision in G.R. No. 235316Assumption of Authority of the Department of Education Over the 14 Public Schools Affected by the Supreme Court Decision in G.R. No. 235316</a></li>
+                            </ul>
+                            <a href="https://www.deped.gov.ph/category/issuances/deped-orders/"> </a>
+                        </div>
+                    </aside>
+                    <aside id="panel-bottom-2" class="large-6 columns" role="complementary">
+                        <div id="listcategorypostswidget-3" class="widget widget_listcategorypostswidget">
+                            <h3 class="widget-title">Recent DepEd Memoranda</h3>
+                            <ul class="lcp_catlist" id="lcp_instance_listcategorypostswidget-3">
+                                <li><a href="https://www.deped.gov.ph/2023/10/02/october-2-2023-dm-060-s-2023-constitution-of-the-department-of-education-union-management-coordinating-committee/">OCTOBER 2, 2023 DM 060, S. 2023 – Constitution of the Department of Education Union-Management Coordinating Committee</a></li>
+                                <li><a href="https://www.deped.gov.ph/2023/10/02/september-22-2023-dm-059-s-2023-2023-philippine-creative-industries-month-celebration-pcim/">SEPTEMBER 22, 2023 DM 059, S. 2023 – 2023 Philippine Creative Industries Month Celebration (PCIM)</a></li>
+                                <li><a href="https://www.deped.gov.ph/2023/09/21/september-21-2023-dm-058-s-2023-participation-in-the-34th-national-statistics-month/">SEPTEMBER 21, 2023 DM 058, S. 2023 – Participation in the 34th National Statistics Month</a></li>
+                            </ul>
+                            <a href="https://www.deped.gov.ph/category/issuances/deped-memoranda/"> </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            
+    </section>
+
+    </div>
+    </main>
+
+
+    
+ 
+
+    <script>
+            function toggleNav() {
+    var navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+    var navLinksContainer = document.querySelector(".nav-links-container");
+    navLinksContainer.classList.toggle("active");
+}
+
+function toggleAccess() {
+            document.getElementById("popup-1").classList.toggle("active");
+        }
+
+        function togglePopup(popupId) {
+    var popup = document.getElementById("popup-" + popupId);
+    popup.classList.toggle("active");
+}
+
+function speakText(textAreaId) {
+    var textToSpeak = document.getElementById(textAreaId).value;
+
+    // Check if the browser supports the SpeechSynthesis API
+    if ('speechSynthesis' in window) {
+        var synthesis = window.speechSynthesis;
+        var utterance = new SpeechSynthesisUtterance(textToSpeak);
+
+        // You can customize voice, rate, pitch, etc. if needed
+        utterance.voice = synthesis.getVoices()[0];
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+
+        synthesis.speak(utterance);
+    } else {
+        alert('Sorry, your browser does not support the SpeechSynthesis API.');
+    }
+}
+
+
+        function toggleHighContrast() {
+            document.body.classList.toggle("high-contrast");
+        }
+    </script>
+
+</body>
+</html>

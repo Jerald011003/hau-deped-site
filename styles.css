@@ -1,0 +1,681 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  list-style: none;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+  div {
+    display: block;
+  }
+  
+  .container {
+    max-width: auto;
+    margin: 0; 
+    padding: 0; 
+
+  }
+
+  .container-page
+  {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    box-sizing: border-box; /* Include padding in the width */
+    padding: 50px;
+    transform: translate(-0%, -0%); /* Center the submenu both horizontally and vertically */
+    
+  }
+
+
+  .carousel-wrappper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .carousel {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: hidden; /* Hide the horizontal scrollbar */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.30);
+    border-radius: 0.5rem;
+  }
+  
+
+  .carousel img {
+    flex: 1;
+    object-fit: cover; /* This will make the image cover the entire container */
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    height: 100%; /* Ensure the image takes up the full height of its container */
+    scroll-snap-align: start;
+    position: relative;
+    /* height: 500px; */
+
+}
+
+
+  .carousel-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    /* Use a specific pixel value for 'bottom' */
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+
+  .carousel-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 20px;
+    background-color: black;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+  }
+
+  .carousel-nav a:hover {
+    opacity: 1;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    background-color: rgb(20, 68, 156);
+  }
+  
+  
+  .row > div {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 50px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in the width */
+  }
+  
+  .large-9_columns{
+    background-color: rgba(255, 255, 255, 0); /* Completely transparent color */
+    text-decoration: none;
+  }
+
+/* Style for the logo */
+.logo {
+    color: black;
+}
+
+/* Style for images within the columns */
+.columns img {
+    max-width: 100%; /* Ensure images don't exceed their container width */
+    height: auto; /* Maintain image aspect ratio */
+    margin-top: 10;
+}
+
+.text-widget h1 img {
+  height: 80%;
+  width: 80%;
+  margin-top: 10;
+}
+
+
+/* CSS for the navbar */
+.navbar {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f7f7f7;
+    z-index: 100;
+    transition: background-color 0.3s;
+    padding: 10px 20px;
+  }
+  
+  
+  /* CSS for the logo */
+  .logo {
+    display: flex; 
+    align-items: left;
+    color: black;
+  }
+  
+  /* CSS for the logo text */
+  .logo h2 {
+    margin-right: 20px;
+    font-weight: lighter;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    color: black;
+    font-size: auto;
+
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+    border: 1px solid transparent;
+    padding: 12px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-weight: lighter;
+    border: 0.5px solid rgb(155, 155, 155);
+
+    
+  }
+  
+  .nav-links a:hover {
+
+    background-color: rgb(155, 155, 155);
+
+  }
+  .nav-links a.active {
+    background-color: rgba(187, 187, 187, 0.491);
+}
+  
+  
+/* CSS for the hamburger menu */
+.hamburger-menu {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+  }
+  .menu-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.menu-label {
+    margin-right: 5px;
+    color: black;
+    display: none;
+}
+
+
+
+  /* CSS for the submenu container */
+.has-submenu {
+  position: relative;
+}
+
+/* CSS for submenu items */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white; 
+  margin-top: 13px;
+  list-style: none;
+  z-index: 1; 
+}
+
+/* Show the submenu when hovering over the parent item */
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Style for submenu items */
+.submenu li {
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+  
+}
+
+/* Style for submenu links */
+.submenu a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 10px 10px;
+  
+}
+
+/* Style for submenu links on hover */
+.submenu a:hover {
+  background-color: #333; 
+  color: white;
+}
+
+.arrow-icon {
+  margin-left: 5px; 
+    font-size: 12px;
+}
+
+/* Style for submenu items */
+.has-submenu2 {
+  position: relative;
+}
+
+/* Style for submenu2 */
+.submenu2 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  border: 1px solid #333; 
+
+  list-style: none;
+  z-index: 1;
+}
+
+/* Show submenu2 when hovering over the parent item */
+.has-submenu2:hover .submenu2 {
+  display: block;
+}
+
+/* Style for submenu items */
+.submenu2 li {
+  margin: 0;
+  font-weight: lighter;
+}
+
+/* Style for submenu links */
+.submenu2 a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 10px 10px; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Style for submenu links on hover */
+.submenu2 a:hover {
+  background-color: #333; 
+  color: white; 
+}
+
+/* CSS for the arrow icon */
+.has-arrow .arrow-icon {
+
+  font-size: 12px; 
+  transform: rotate(90deg); 
+  display: inline-block;
+}
+
+.search{
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1169px)  {
+  .submenu{
+    transform: translate(-0%, -10%); /* Center the submenu both horizontally and vertically */
+    border: 2px solid black;
+
+  }
+  .submenu2 {
+    position: absolute; /* Position submenu absolutely relative to the parent */
+    border: 0px;
+    transform: translate(-165%, -50%); /* Center the submenu both horizontally and vertically */
+    border: 2px solid black;
+
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+
+
+  .hamburger-menu {
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+
+    text-align: right;
+
+  }
+
+  .nav-links{
+    display: none;
+
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 59px;
+    right: 0; 
+    background-color: #f7f7f7;
+    width: auto;
+    text-align: left; 
+    margin-top: 5px;
+    border: 0;
+    border: 2px solid black;
+
+  }
+
+  .nav-links.active li {
+    padding: 10px 20px; 
+
+  }
+
+  .nav-links a.active {
+    background-color: white;
+    color: black;
+}
+
+.nav-links a:hover {
+
+  background-color: white;
+  color: black;
+
+
+
+  
+}
+.row > div{
+ margin-top: 50px;
+}
+  .nav-links a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 0px 0;
+    border: 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  .submenu{
+    transform: translate(-0%, -10%); /* Center the submenu both horizontally and vertically */
+    border: 2px solid black;
+
+  }
+  .submenu2 {
+    position: absolute; /* Position submenu absolutely relative to the parent */
+    border: 0px;
+    transform: translate(-165%, -50%); /* Center the submenu both horizontally and vertically */
+    border: 2px solid black;
+
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+
+
+  .hamburger-menu {
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+
+    text-align: right;
+
+  }
+
+  .nav-links{
+    display: none;
+
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 59px;
+    right: 0; 
+    background-color: #f7f7f7;
+    width: auto;
+    text-align: left; 
+    margin-top: 5px;
+    border: 0;
+    border: 2px solid black;
+
+  }
+
+  .nav-links.active li {
+    padding: 10px 20px; 
+
+  }
+
+  .nav-links a.active {
+    background-color: white;
+    color: black;
+}
+
+.nav-links a:hover {
+
+  background-color: white;
+  color: black;
+
+
+
+  
+}
+.row > div{
+ margin-top: 50px;
+}
+  .nav-links a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 0px 0;
+    border: 0;
+  }
+}
+
+
+.popup .overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+
+.popup .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 450px;
+  height: 220px;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.popup .close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #222;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.popup.active .overlay {
+  display: block;
+}
+
+.popup.active .content {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* CSS for the submenu container */
+.has-submenu {
+  position: relative;
+}
+
+/* CSS for submenu items */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  margin-top: 10px;
+  list-style: none;
+  z-index: 1;
+}
+
+/* Show the submenu when hovering over the parent item */
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Style for submenu items */
+.submenu li {
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+
+}
+
+/* Style for submenu links */
+.submenu a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 10px 10px;
+
+}
+
+/* Style for submenu links on hover */
+.submenu a:hover {
+  background-color: #333;
+  color: white;
+}
+
+.arrow-icon {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Style for submenu items */
+.has-submenu2 {
+  position: relative;
+}
+
+/* Style for submenu2 */
+.submenu2 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  border: 1px solid #333;
+
+  list-style: none;
+  z-index: 1;
+}
+
+/* Show submenu2 when hovering over the parent item */
+.has-submenu2:hover .submenu2 {
+  display: block;
+}
+
+/* Style for submenu items */
+.submenu2 li {
+  margin: 0;
+  font-weight: lighter;
+}
+
+/* Style for submenu links */
+.submenu2 a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 10px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Style for submenu links on hover */
+.submenu2 a:hover {
+  background-color: #333;
+  color: white;
+}
+
+body.high-contrast {
+  display: flex;
+  filter: invert(100%);
+  margin-top: 0px;
+  background-color: black;
+}
+
+.widget_listcategorypostswidget {
+  color: black; /* Set text color to black */
+  background-color: white; /* Set background color to white */
+}
+
+
+.container-page2
+{
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  box-sizing: border-box; /* Include padding in the width */
+  padding: 50px;
+  transform: translate(-0%, -0%); /* Center the submenu both horizontally and vertically */
+  
+}
+
+.row2 {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+
+}
+
+.large-6.columns {
+  width: 50%; /* Set each column to 50% width */
+}
