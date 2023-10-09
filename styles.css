@@ -434,16 +434,14 @@
   .navbar {
     display: flex;
     justify-content: space-between;
-  }
-
-  .nav-links {
-    display: none;
 
   }
+
 
   .nav-links li {
     font-size: 10px;
     padding: 0px 0px;
+
   }
 
 
@@ -506,6 +504,87 @@
     padding: auto;
     border: 0;
   }
+}
+
+/* For screens under 360px */
+@media (max-width: 360px) {
+  .row > div {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 25px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in the width */
+  }
+  .columns img {
+    max-width: 100%; /* Ensure images don't exceed their container width */
+    height: auto; /* Maintain image aspect ratio */
+    margin-top: 10;
+}
+
+  .submenu{
+    transform: translate(-15%, -5%); /* Center the submenu both horizontally and vertically */
+    border: 2px solid black;
+    padding: 0px 3px;
+
+
+  }
+  .submenu2 {
+    position: absolute; /* Position submenu absolutely relative to the parent */
+    border: 0px;
+    transform: translate(-145%, 0%); /* Center the submenu both horizontally and vertically */
+    border: 2px solid black;
+    padding: 0px;
+
+  }
+
+  .search{
+    display: none;
+  }
+  .nav-links li {
+    font-size: 10px;
+    padding: 0px;
+  }
+
+  .hamburger-menu {
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    text-align: right;
+  }
+
+  .nav-links {
+    display: none;
+    padding: 14px;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 59px;
+    right: 0;
+    background-color: #f7f7f7;
+    width: auto;
+    text-align: left;
+    margin-top: 5px;
+    border: 0;
+    border: 2px solid black;
+  }
+
+  .nav-links.active li {
+    padding: 6px 10px;
+  }
+
+  .nav-links a.active {
+    background-color: white;
+    color: black;
+  }
+
+  .nav-links a:hover {
+    background-color: white;
+    color: black;
+  }
+
 }
 
 
